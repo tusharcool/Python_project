@@ -1,3 +1,2 @@
 
-print "hello"
-print "This"
+print 'Let\'s get started'
