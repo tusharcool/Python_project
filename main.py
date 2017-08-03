@@ -1,6 +1,7 @@
-
 print 'Let\'s get started'
 spy_name = raw_input("what is ur name ?")
+if  len(spy_name)>0:
+    print "VALID NAME"
 spy_salutation = raw_input('what is ur salutaion')
 # concatination of salutation and name.
 spy_name = spy_salutation + " " + spy_name
