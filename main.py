@@ -12,10 +12,10 @@ if  len(spy_name)>0:
         print type(spy_age)
         spy_age = int(raw_input('Enter the age of spy '))
         if(type(spy_age)== int):
-           print type(spy_age)
            print 'valid age'
         if spy_age > 15 and spy_age < 50:
-            spy_rating = raw_input("enter the rating")
+            spy_rating = bool(raw_input("enter the rating"))
+            print type(spy_rating)
         else:
             "not valid age"
     else:

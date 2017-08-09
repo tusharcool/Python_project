@@ -5,5 +5,11 @@ while j<=255:
     print a
     i=i+1
     j=j+1
+else:
+    dwkenf
+    dm
+
+
+
 
 
