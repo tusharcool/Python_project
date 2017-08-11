@@ -1,4 +1,6 @@
 # start chat function definition
+from add_status import add_status
+
 
 def start_chat(name,age,rating):
     show_menu=True
@@ -7,8 +9,7 @@ def start_chat(name,age,rating):
         result =int(raw_input(menu_choices))
         # validationg users input
         if (result==1):
-            # action
-            pass
+            current_status_message= add_status(current_status_message)
         elif(result==2):
             show_menu=False
         else :

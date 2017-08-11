@@ -1,7 +1,7 @@
-i= 'a'
-j=0
-while j<=255:
-
+i=0
+while(i<=255):
+    print "%c\t"%i
+    i=i+1;
 
 
 

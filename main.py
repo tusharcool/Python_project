@@ -1,7 +1,9 @@
-from spy_details import spy_name,spy_salutation,spy_rating,spy_age
+from spy_details import spy
 from start_chat import start_chat
+
+
 print 'Let\'s get started'
-question='Do you want to continue as'+spy_salutation+"  "+spy_name+ ' (y/n)  '
+question='Do you want to continue as'+spy['Salutation']+"  "+spy['Name']+ ' (y/n)  '
 existing=raw_input(question)
 # check validating user input
 if (existing=='Y' or existing=='y'):
