@@ -10,3 +10,5 @@ print list3*2
 list1=[5,6]
 list2=list3+list1
 print list2
+
+if(list1[0]>2):

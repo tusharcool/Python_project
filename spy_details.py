@@ -4,9 +4,10 @@
 #spy_rating=5.0
 #spy_online=True
 
-spy={'Name': 'Tushar',
-      'Salutation': 'Mr.',
+spy={'name': 'Tushar',
+      'salutation': 'Mr.',
       'age': 25,
-       'Rating': 4.5,
-       'online': True
-        }
+       'rating': 4.5,
+       'is_online': True
+}
+print spy;
