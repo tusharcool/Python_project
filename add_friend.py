@@ -1,4 +1,5 @@
 from globals import friends
+from spy_details import spy
 
 def add_friend():
 
@@ -9,16 +10,16 @@ def add_friend():
                 'status': False
     }
 
-    new_name=raw_input("Please add your friend")
-    new_salutation=raw_input("Enter the salutation")
-    new_name=new_salutation+"  "+new_name
-    new_rating=float(raw_input("Spy Rating?"))
-    new_age=int(raw_input("Age?"))
+    new_friend['name']=raw_input("Please add your friend")
+    new_friend['salutation']=raw_input("Enter the salutation")
+    new_friend['name']=new_friend['salutation']+"  "+new_friend['name']
+    new_friend['rating']=float(raw_input("Spy Rating?"))
+    new_friend['age']=int(raw_input("Age?"))
 
     # proper validation by the user
-    if len(new_name)>0 and new_age >12 and new_age <50 and len(new_rating)>0:
+    if len(new_friend['name'])>0 and new_friend['age'] >12 and new_friend['rating']>=spy['rating']:
         #add friend
-        friends.Append(new_friend)
+        friends.append(new_friend)
         print 'Friend Added'
     else:
         print "invalid entry"
