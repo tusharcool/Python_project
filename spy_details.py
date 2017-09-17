@@ -17,5 +17,5 @@ class spy:
         self.age = age
         self.rating = rating
         self.is_online = True
-        self.chats = []
         self.current_status_message =  None
+        self.avg=[]

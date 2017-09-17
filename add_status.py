@@ -12,7 +12,7 @@ def add_status(status_message):
 
         if len(new_status_message)>0:
             updated_status_meaasge = new_status_message
-            STATUS_MESSAGES.aapend(updated_status_meaasge)
+            STATUS_MESSAGES.append(updated_status_meaasge)
 
     elif default.upper()=='Y':
         item_position=1

@@ -2,6 +2,12 @@
 from add_status import add_status
 from add_friend import add_friend
 from send_message import send_message
+from add_status import add_status
+from spy_details import spy
+from read_message import read_message
+from read_chat_history import  read_chat_history
+
+addfriend = add_friend("","",0,0.0)
 
 def start_chat(name,age,rating,status):
     from globals import current_status_message
@@ -31,10 +37,14 @@ def start_chat(name,age,rating,status):
             if (result==1):
                  current_status_message= add_status(current_status_message)
             elif(result==2):
-                number_of_friends=add_friend()
+                number_of_friends=addfriend.new_friend()
                 print "you have %d friends"% number_of_friends
             elif(result==3):
                 send_message()
+            elif(result==4):
+                read_message()
+            elif(result==5):
+                read_chat_history()
             elif(result==6):
                 show_menu=False
             else :

@@ -1,5 +1,7 @@
 from spy_details import spy
 from start_chat import start_chat
+import re
+
 
 spy =spy('Tushar','Mr.',34,6.0)
 print 'Let\'s get started'
@@ -7,36 +9,50 @@ question='Do you want to continue as'+spy.salutation+"  "+spy.name+ ' (y/n)  '
 existing=raw_input(question)
 # check validating user input
 if (existing=='Y' or existing=='y'):
-    spy.name=spy['salutation']+"  "+spy.name
-    start_chat(spy.name,spy.age,spy.rating,spy['is_online']);
+    spy.name=spy.salutation+"  "+spy.name
+    start_chat(spy.name,spy.age,spy.rating,spy.is_online)
 
 elif (existing=='N' or existing =='n'):
     #new users code
-    spy.name = raw_input("what is ur name ?")
-    if len(spy.name) > 0:
-        if spy.name.isalpha():
-            print "Alright" + spy.name + " I would like to know better before to proceed further.."
-            spy.salutation = raw_input('what is ur salutaion')
-            spy.name = spy.salutation + " " + spy.name
-            print 'welcome ' + spy.name + ' glad to here with you'
-            spy.age = 0
-            spy.rating = 0.0
-            spy['online'] = False
-            print type(spy.age)
-            spy.age = int(raw_input('Enter the age of spy '))
-            if (type(spy.age) == int):
-                print 'valid age'
-            if spy.age > 15 and spy.age < 50:
-                spy.rating = bool(raw_input("enter the rating"))
-                print type(spy.rating)
-            else:
-                "not valid age"
+    temp = True  # temporary variable
+
+    patternsalutation = '^Mr|Ms$'
+    patternname = '^[A-Za-z][A-Za-z\s]+$'
+    patternage = '^[0-9]+$'
+    patternrating = '^[0-9]+\.[0-9]$'
+    # Validating Each Values Using Regular Expression
+    while temp:
+        salutation = raw_input("Mr. or Ms.? : ")
+        if (re.match(patternsalutation, salutation) != None):
+            tempcheck = False
         else:
-            print"INVALID name"
+            print("Enter Again!!!!")
+    temp = True
+    while temp:
+        spy.name = raw_input("Enter Name: ")
+        if (re.match(patternname, spy.name) != None):
+            temp = False
+        else:
+            print("Enter Again!!!!")
+    # concatenation.
+    spy.name = salutation + "." + spy.name
+    temp = True
+    while temp:
+        spy.age = raw_input("Age?")
+        if (re.match(patternage, spy.age) != None):
+            temp = False
+            spy.age = int(spy.age)
+        else:
+            print ("Enter Again!!!!")
+    temp = True
+    while temp:
+        spy.rating = raw_input("Spy rating?")
+        if (re.match(patternrating, spy.rating) != None):
+            temp = False
+            spy.rating = float(spy.rating)
+        else:
+            print ("Enter Again!!!!")
+
     # concatination of salutation and name.
-
-
-    else:
-        print 'Not valid in'
 else:
     print "wrong choice try again"
